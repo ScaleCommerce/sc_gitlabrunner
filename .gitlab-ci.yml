@@ -10,7 +10,9 @@ stages:
   script:
     - ./test/install.sh
     - puppet apply -v test/site.pp
+    - sleep 3600
     - inspec exec test/inspec/sc_gitlabrunner.rb
+
 
 #16.04:puppet3:
 #  stage: Puppet 3

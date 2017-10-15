@@ -11,6 +11,7 @@ class sc_gitlabrunner (
     ensure => link,
     target => '/etc/supervisor.init/supervisor-init-wrapper',
   }
+
   file { '/etc/supervisor.d/gitlab-runner.conf':
     owner   => 'root',
     group   => 'root',
