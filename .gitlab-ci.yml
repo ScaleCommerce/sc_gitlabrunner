@@ -10,7 +10,6 @@ stages:
   script:
     - ./test/install.sh
     - puppet apply -v test/site.pp
-    - sleep 3600
     - inspec exec test/inspec/sc_gitlabrunner.rb
 
 
