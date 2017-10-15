@@ -1,7 +1,7 @@
 stages:
   - Puppet 3
   - Puppet 4
-#  - Puppet 5
+  - Puppet 5
   - push2github
 
 14.04:puppet3:
