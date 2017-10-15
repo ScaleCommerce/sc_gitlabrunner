@@ -19,31 +19,27 @@ stages:
   script:
     - ./test/install.sh
     - puppet apply -v test/site.pp
-    - inspec exec test/inspec/sc_rundeck.rb
+    - inspec exec test/inspec/sc_gitlabrunner.rb
 
-#14.04:puppet4:
-#  stage: Puppet 4
-#  image: scalecommerce/base:0.6
-#  script:
-#    - ./test/install-puppet4.sh
-#    - ./test/install.sh
-#    - export PATH=/opt/puppetlabs/bin:$PATH
-#    - puppet module install puppet-rundeck --version 4.0.1
-#    - puppet apply -v test/site.pp
-#    - sleep 60
-#    - inspec exec test/inspec/sc_rundeck.rb
+14.04:puppet4:
+  stage: Puppet 4
+  image: scalecommerce/base:0.6
+  script:
+    - ./test/install-puppet4.sh
+    - ./test/install.sh
+    - export PATH=/opt/puppetlabs/bin:$PATH
+    - puppet apply -v test/site.pp
+    - inspec exec test/inspec/sc_gitlabrunner.rb
 
-#16.04:puppet4:
-#  stage: Puppet 4
-#  image: scalecommerce/xenial:1.0
-#  script:
-#    - ./test/install-puppet4.sh
-#    - ./test/install.sh
-#    - export PATH=/opt/puppetlabs/bin:$PATH
-#    - puppet module install puppet-rundeck --version 4.0.1
-#    - puppet apply -v test/site.pp
-#    - sleep 60
-#    - inspec exec test/inspec/sc_rundeck.rb
+16.04:puppet4:
+  stage: Puppet 4
+  image: scalecommerce/xenial:1.0
+  script:
+    - ./test/install-puppet4.sh
+    - ./test/install.sh
+    - export PATH=/opt/puppetlabs/bin:$PATH
+    - puppet apply -v test/site.pp
+    - inspec exec test/inspec/sc_gitlabrunner.rb
 
 
 push2github:
