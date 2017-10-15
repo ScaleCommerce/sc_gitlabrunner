@@ -17,10 +17,10 @@ class sc_gitlabrunner (
     group   => 'root',
     mode    => '0644',
     content => template("${module_name}/gitlab-runner.conf.erb"),
-    notify => Exec['supervisorctl_gitlab_ci_update'],
+#    notify => Exec['supervisorctl_gitlab_ci_update'],
   }
-  exec {'supervisorctl_gitlab_ci_update':
-    command => '/usr/local/bin/supervisorctl update',
-    refreshonly => true,
-  }
+#  exec {'supervisorctl_gitlab_ci_update':
+#    command => '/usr/local/bin/supervisorctl update',
+#    refreshonly => true,
+#  }
 }
