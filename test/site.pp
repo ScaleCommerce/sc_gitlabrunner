@@ -27,5 +27,4 @@ create_resources(service, $services)
 supervisord::program { "gitlab-runner":
   command   => "command=/usr/bin/gitlab-ci-multi-runner run --working-directory /home/gitlab_ci_multi_runner --config /etc/gitlab-runner/config.toml --service gitlab-runner --syslog --user gitlab_ci_multi_runner",
   user    => 'gitlab_ci_multi_runner',
-  require => Class['consul::config'],
 }
