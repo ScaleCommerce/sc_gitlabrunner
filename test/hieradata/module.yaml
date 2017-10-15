@@ -17,5 +17,5 @@ vm_config::gitlab_ci_multi_runner::gitlab_ci_runners:
   azoxidcloud:
     user: root
     gitlab_ci_url: https://gitlab.scale.sc/ci
-    token: ab5_WEV2yJt9AeSUWUCs
+    token: 6H1xisbB9zvbfF2qtMZV
     executor: shell
