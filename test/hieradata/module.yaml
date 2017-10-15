@@ -17,5 +17,5 @@ sc_gitlabrunner::gitlab_ci_runners:
   sctestrunner:
     user: root
     gitlab_ci_url: https://gitlab.scale.sc/ci
-    token: 6H1xisbB9zvbfF2qtMZV
+    token: s2vA9oSDQs8_jppvh5zq
     executor: shell
