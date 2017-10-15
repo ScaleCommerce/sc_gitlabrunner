@@ -13,16 +13,13 @@ stages:
     - inspec exec test/inspec/sc_gitlabrunner.rb
 
 
-#16.04:puppet3:
-#  stage: Puppet 3
-#  image: scalecommerce/xenial:1.0
-#  script:
-#    - ./test/install.sh
-#    - puppet module install puppet-rundeck --version 4.0.0
-#    - puppet apply -v test/site.pp
-#    - "# waiting for rundeck to start ..."
-#    - sleep 60
-#    - inspec exec test/inspec/sc_rundeck.rb
+16.04:puppet3:
+  stage: Puppet 3
+  image: scalecommerce/xenial:1.0
+  script:
+    - ./test/install.sh
+    - puppet apply -v test/site.pp
+    - inspec exec test/inspec/sc_rundeck.rb
 
 #14.04:puppet4:
 #  stage: Puppet 4
@@ -52,4 +49,4 @@ stages:
 push2github:
   stage: push2github
   script:
-    - git push --mirror https://$GITHUB_TOKEN@github.com/ScaleCommerce/puppet-sc_gitlabrunner.git
+    - git push --mirror https://$GITHUB_TOKEN@github.com/ScaleCommerce/sc_gitlabrunner.git
