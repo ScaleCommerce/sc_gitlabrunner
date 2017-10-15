@@ -85,3 +85,7 @@ The following tests are available:
 
 `16.04:puppet4`
 
+`14.04:puppet5`
+
+`16.04:puppet5`
+
