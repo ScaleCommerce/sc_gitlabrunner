@@ -1,6 +1,6 @@
 stages:
   - Puppet 3
-#  - Puppet 4
+  - Puppet 4
 #  - Puppet 5
   - push2github
 
