@@ -15,7 +15,6 @@ gitlab_ci_multi_runner::version: 1.11.1
 gitlab_ci_multi_runner::install_service_file: false
 sc_gitlabrunner::gitlab_ci_runners:
   sctestrunner:
-    user: root
-    gitlab_ci_url: https://gitlab.scale.sc/ci
+    url: https://gitlab.scale.sc/ci
     token: s2vA9oSDQs8_jppvh5zq
     executor: shell

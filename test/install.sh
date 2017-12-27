@@ -15,7 +15,7 @@ puppet config set certname puppet-test.scalecommerce
 puppet module install ajcrowe-supervisord
 puppet module install puppetlabs-apt --version 2.4.0
 #puppet module install frankiethekneeman-gitlab_ci_multi_runner --version 0.5.1
-git clone https://github.com/frankiethekneeman/puppet-gitlab-ci-multi-runner.git $(puppet config print modulepath |cut -d: -f1)/gitlab_ci_multi_runner
+git clone https://github.com/Jeoffreybauvin/gitlab-ci-multi-runner.git $(puppet config print modulepath |cut -d: -f1)/gitlab_ci_multi_runner
 git clone https://github.com/ScaleCommerce/puppet-supervisor_provider.git $(puppet config print modulepath |cut -d: -f1)/supervisor_provider
 
 ln -sf $(pwd) $(puppet config print modulepath |cut -d: -f1)/sc_gitlabrunner
