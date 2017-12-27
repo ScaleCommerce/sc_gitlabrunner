@@ -13,7 +13,7 @@ apt::pins:
 gitlab_ci_multi_runner::user: 'root'
 gitlab_ci_multi_runner::version: 1.11.1
 gitlab_ci_multi_runner::install_service_file: false
-sc_gitlabrunner::gitlab_ci_runners:
+gitlab_ci_multi_runner::runners:
   sctestrunner:
     url: https://gitlab.scale.sc/ci
     token: s2vA9oSDQs8_jppvh5zq
