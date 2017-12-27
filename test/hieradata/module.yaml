@@ -12,9 +12,15 @@ apt::pins:
 
 gitlab_ci_multi_runner::user: 'root'
 gitlab_ci_multi_runner::version: 1.11.1
-gitlab_ci_multi_runner::install_service_file: false
+gitlab_ci_multi_runner::service_enable: false
+gitlab_ci_multi_runner::service_provider: supervisor
+gitlab_ci_multi_runner::params::manage_package_repo: true
 gitlab_ci_multi_runner::runners:
   sctestrunner:
     url: https://gitlab.scale.sc/ci
     token: s2vA9oSDQs8_jppvh5zq
     executor: shell
+  sctestrunner2:
+      url: https://gitlab.scale.sc/ci
+      token: s2vA9oSDQs8_jppvh5zq
+      executor: shell
