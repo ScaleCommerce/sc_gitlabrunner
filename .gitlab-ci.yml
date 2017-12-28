@@ -21,6 +21,7 @@ stages:
   script:
     - ./test/install.sh
     - puppet apply -v test/site.pp
+#    - sleep 3600
     - inspec exec test/inspec/sc_gitlabrunner.rb
 
 14.04:puppet4:
@@ -31,6 +32,7 @@ stages:
     - ./test/install.sh
     - export PATH=/opt/puppetlabs/bin:$PATH
     - puppet apply -v test/site.pp
+#    - sleep 3600
     - inspec exec test/inspec/sc_gitlabrunner.rb
 
 16.04:puppet4:

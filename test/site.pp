@@ -22,9 +22,7 @@ create_resources(package, $packages)
 $services=hiera_hash('services', {})
 create_resources(service, $services)
 
-
-
-#supervisord::program { "gitlab-runner":
-#  command   => "/usr/bin/gitlab-ci-multi-runner run --working-directory /home/gitlab-runner --config /etc/gitlab-runner/config.toml --service gitlab-runner --syslog --user gitlab-runner",
-#  user    => 'gitlab-runner',
-#}
+# override default service provider
+Service <| title == "gitlab-runner"|> {
+  provider => supervisor,
+}
