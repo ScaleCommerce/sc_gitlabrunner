@@ -17,8 +17,9 @@ ScaleCommerce Wrapper Module for frankiethekneeman/puppet-gitlab-ci-multi-runner
 ## Module Description
 
 This module uses hiera to configure supervisord and gitlab-ci-multi-runner. 
-We're using upstream modules [frankiethekneeman/puppet-gitlab-ci-multi-runner](https://github.com/frankiethekneeman/puppet-gitlab-ci-multi-runner) and [ajcrowe/puppet-supervisord](https://github.com/ajcrowe/puppet-supervisord). 
-This module is compatible with Ubuntu 14.04, Ubuntu 16.04, Puppet 3, Puppet 4, Puppet 5.
+We're using upstream modules [Jeoffreybauvin/gitlab-ci-multi-runner](https://github.com/Jeoffreybauvin/gitlab-ci-multi-runner) and 
+[ajcrowe/puppet-supervisord](https://github.com/ajcrowe/puppet-supervisord). 
+This module is compatible with Ubuntu 14.04, Ubuntu 16.04, Puppet 3, Puppet 5.
 
 ## Setup
 
@@ -80,10 +81,6 @@ The following tests are available:
 `14.04:puppet3`
 
 `16.04:puppet3`
-
-`14.04:puppet4`
-
-`16.04:puppet4`
 
 `14.04:puppet5`
 
