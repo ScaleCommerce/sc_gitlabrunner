@@ -2,6 +2,7 @@
 classes:
   - apt
   - sc_gitlabrunner
+
   
 
 apt::pins:

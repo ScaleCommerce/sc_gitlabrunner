@@ -8,4 +8,5 @@ class sc_gitlabrunner (
 
   include gitlab_ci_multi_runner
   include gitlab_ci_multi_runner::install
+
 }
