@@ -13,7 +13,5 @@ class sc_gitlabrunner::supervisor(
 
   exec { 'supervisor-gitlab-runner-update':
     command => "/usr/local/bin/supervisorctl update",
-    refreshonly => true,
-    require     => Service['gitlab-runner'],
   }
 }
