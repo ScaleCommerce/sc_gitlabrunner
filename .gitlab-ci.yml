@@ -13,8 +13,6 @@ stages:
 #    - sleep 3600
     - inspec exec test/inspec/sc_gitlabrunner.rb
 
-
-
 16.04:puppet3:
   stage: Puppet 3
   image: scalecommerce/xenial:1.0
@@ -22,27 +20,6 @@ stages:
     - ./test/install.sh
     - puppet apply -v test/site.pp
 #    - sleep 3600
-    - inspec exec test/inspec/sc_gitlabrunner.rb
-
-14.04:puppet4:
-  stage: Puppet 4
-  image: scalecommerce/base:0.6
-  script:
-    - ./test/install-puppet4.sh
-    - ./test/install.sh
-    - export PATH=/opt/puppetlabs/bin:$PATH
-    - puppet apply -v test/site.pp
-#    - sleep 3600
-    - inspec exec test/inspec/sc_gitlabrunner.rb
-
-16.04:puppet4:
-  stage: Puppet 4
-  image: scalecommerce/xenial:1.0
-  script:
-    - ./test/install-puppet4.sh
-    - ./test/install.sh
-    - export PATH=/opt/puppetlabs/bin:$PATH
-    - puppet apply -v test/site.pp
     - inspec exec test/inspec/sc_gitlabrunner.rb
 
 14.04:puppet5:
