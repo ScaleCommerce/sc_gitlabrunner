@@ -9,5 +9,11 @@ class sc_gitlabrunner::supervisor(
     autorestart => true,
     require     => Package['gitlab-ci-multi-runner'],
     before      => Service['gitlab-runner'],
+  }->
+
+  exec { 'supervisor-gitlab-runner-update':
+    command => "/usr/local/bin/supervisorctl update",
+    refreshonly => true,
+    require     => Service['gitlab-runner'],
   }
 }
