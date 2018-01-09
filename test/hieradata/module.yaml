@@ -4,7 +4,7 @@ classes:
   - sc_gitlabrunner
 
   
-
+# pin version
 apt::pins:
   "gitlab-ci-multi-runner":
     packages: "gitlab-ci-multi-runner"
