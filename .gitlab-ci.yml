@@ -4,15 +4,15 @@ stages:
   - Puppet 5
   - push2github
 
-14.04:puppet3:
-  stage: Puppet 3
-  image: scalecommerce/base:0.6
-  script:
+#14.04:puppet3:
+#  stage: Puppet 3
+#  image: scalecommerce/base:0.6
+#  script:
 #    - ./test/install.sh
 #    - puppet apply -v test/site.pp
 #    - sleep 3600
 #    - inspec exec test/inspec/sc_gitlabrunner.rb
-    - echo "hallo"
+#    - echo "hallo"
 
 16.04:puppet3:
   stage: Puppet 3
@@ -24,32 +24,33 @@ stages:
 #    - inspec exec test/inspec/sc_gitlabrunner.rb
     - echo "hallo"
 
-14.04:puppet5:
-  stage: Puppet 5
-  image: scalecommerce/base:0.6
-  script:
+#14.04:puppet5:
+#  stage: Puppet 5
+#  image: scalecommerce/base:0.6
+#  script:
 #    - ./test/install-puppet5.sh
 #    - ./test/install.sh
 #    - export PATH=/opt/puppetlabs/bin:$PATH
 #    - puppet apply -v test/site.pp
 #    - sleep 3600
 #    - inspec exec test/inspec/sc_gitlabrunner.rb
-    - echo "hallo"
+#    - echo "hallo"
 
-16.04:puppet5:
-  stage: Puppet 5
-  image: scalecommerce/xenial:1.0
-  script:
+#16.04:puppet5:
+#  stage: Puppet 5
+#  image: scalecommerce/xenial:1.0
+#  script:
 #    - ./test/install-puppet5.sh
 #    - ./test/install.sh
 #    - export PATH=/opt/puppetlabs/bin:$PATH
 #    - puppet apply -v test/site.pp
 #    - sleep 3600
 #    - inspec exec test/inspec/sc_gitlabrunner.rb
-    - echo "hallo"
+#    - echo "hallo"
 
 
 push2github:
   stage: push2github
+  image: scalecommerce/xenial:1.0
   script:
     - git push --all https://$GITHUB_TOKEN@github.com/ScaleCommerce/sc_gitlabrunner.git
