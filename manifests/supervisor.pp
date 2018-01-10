@@ -4,9 +4,9 @@ class sc_gitlabrunner::supervisor(
   include supervisord
 
   supervisord::program { 'gitlab-runner':
-    command     => "/usr/bin/gitlab-ci-multi-runner run --working-directory /home/gitlab-runner --config /etc/gitlab-runner/config.toml --service gitlab-runner --syslog --user gitlab-runner",
+    command     => "/usr/bin/gitlab-runner run --working-directory /home/gitlab-runner --config /etc/gitlab-runner/config.toml --service gitlab-runner --syslog --user gitlab-runner",
     autostart   => true,
     autorestart => true,
-    require     => Service['gitlab-runner'],
+    require     => Exec['gitlab-runner-restart'],
   }
 }

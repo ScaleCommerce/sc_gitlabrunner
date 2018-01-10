@@ -3,27 +3,19 @@ classes:
   - apt
   - sc_gitlabrunner
 
-  
-# pin version
-apt::pins:
-  "gitlab-ci-multi-runner":
-    packages: "gitlab-ci-multi-runner"
-    version: "1.11.1"
-    priority: 1000
 
-gitlab_ci_multi_runner::user: 'root'
-gitlab_ci_multi_runner::version: 1.11.1
-gitlab_ci_multi_runner::service_ensure: 'stopped'
-#gitlab_ci_multi_runner::service_start: '/usr/local/bin/supervisorctl start gitlab-runner'
-#gitlab_ci_multi_runner::service_stop: '/usr/local/bin/supervisorctl stop gitlab-runner'
-#gitlab_ci_multi_runner::service_provider: supervisor
-gitlab_ci_multi_runner::params::manage_package_repo: true
-gitlab_ci_multi_runner::runners:
+gitlab::cirunner::concurrent: 2
+gitlab::cirunner::manage_docker: false
+gitlab_ci_runners:
+  test_runner: {}
+  myrunner:
+    url: "https://gitlab.scale.sc/ci"
+    registration-token: "s2vA9oSDQs8_jppvh5zq"
   sctestrunner:
-    url: https://gitlab.scale.sc/ci
-    token: s2vA9oSDQs8_jppvh5zq
-    executor: shell
-  sctestrunner2:
-      url: https://gitlab.scale.sc/ci
-      token: s2vA9oSDQs8_jppvh5zq
-      executor: shell
+    url: "https://gitlab.scale.sc/ci"
+    registration-token: "s2vA9oSDQs8_jppvh5zq"
+
+gitlab_ci_runners_defaults:
+  url: "https://gitlab.scale.sc/ci"
+  registration-token: "s2vA9oSDQs8_jppvh5zq"
+  executor: "shell"
