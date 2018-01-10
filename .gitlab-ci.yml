@@ -53,4 +53,7 @@ push2github:
   stage: push2github
   image: scalecommerce/xenial:1.0
   script:
+    - pwd
+    - git log
     - git push --all https://$GITHUB_TOKEN@github.com/ScaleCommerce/sc_gitlabrunner.git
+    - sleep 3600
