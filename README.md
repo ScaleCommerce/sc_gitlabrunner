@@ -21,7 +21,6 @@ We're using upstream module [voxpupuli/puppet-gitlab](https://github.com/voxpupu
 [ajcrowe/puppet-supervisord](https://github.com/ajcrowe/puppet-supervisord). 
 This module is compatible with Ubuntu 14.04, Ubuntu 16.04, Puppet 3, Puppet 5.
 
-
 ## Setup
 
 ### What sc_gitlabrunner affects
