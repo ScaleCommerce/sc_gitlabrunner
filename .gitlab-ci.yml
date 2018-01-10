@@ -55,5 +55,5 @@ push2github:
   script:
     - pwd
     - git log
-    - git push --all https://$GITHUB_TOKEN@github.com/ScaleCommerce/sc_gitlabrunner.git
-    - sleep 3600
+    - git push --mirror https://$GITHUB_TOKEN@github.com/ScaleCommerce/sc_gitlabrunner.git
+#    - sleep 3600
