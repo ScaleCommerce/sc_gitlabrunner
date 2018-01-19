@@ -1,6 +1,6 @@
 {
   "name": "scalecommerce-sc_gitlabrunner",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Andreas Ziethen ScaleCommerce GmbH",
   "summary": "ScaleCommerce Wrapper Module for frankiethekneeman/puppet-gitlab-ci-multi-runner. Manages Supervisord.",
   "license": "Apache 2.0",
