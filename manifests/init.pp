@@ -7,4 +7,9 @@ class sc_gitlabrunner (
   }
 
   include gitlab::cirunner
+
+  if (!$gitlab::cirunner::manage_repo) {
+    Apt::Source['apt_gitlabci'] -> Package[gitlab-runner]
+    Exec['apt_update'] -> Package[gitlab-runner]
+  }
 }
