@@ -49,4 +49,4 @@ push2github:
   stage: push2github
   image: scalecommerce/xenial:1.2
   script:
-    - git push --mirror https://$GITHUB_TOKEN@github.com/ScaleCommerce/sc_gitlabrunner.git
+    - git push --quiet --mirror https://$GITHUB_TOKEN@github.com/ScaleCommerce/sc_gitlabrunner.git
