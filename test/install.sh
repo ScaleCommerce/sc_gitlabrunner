@@ -20,7 +20,7 @@ puppet config set certname puppet-test.scalecommerce
 puppet module install ajcrowe-supervisord
 puppet module install puppetlabs-apt --version 2.4.0
 git clone https://github.com/ScaleCommerce/puppet-sc_supervisor.git /etc/puppet/modules/sc_supervisor
-git clone https://github.com/voxpupuli/puppet-gitlab.git $(puppet config print modulepath |cut -d: -f1)/gitlab
+git clone https://github.com/voxpupuli/puppet-gitlab_ci_runner.git $(puppet config print modulepath |cut -d: -f1)/gitlab
 git clone https://github.com/ScaleCommerce/puppet-supervisor_provider.git $(puppet config print modulepath |cut -d: -f1)/supervisor_provider
 
 ln -sf $(pwd) $(puppet config print modulepath |cut -d: -f1)/sc_gitlabrunner
