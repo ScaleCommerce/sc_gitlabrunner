@@ -16,9 +16,9 @@ ScaleCommerce Wrapper Module for frankiethekneeman/puppet-gitlab-ci-multi-runner
 
 ## Module Description
 
-This module uses hiera to configure supervisord and gitlab-ci-multi-runner. 
-We're using upstream module [voxpupuli/puppet-gitlab](https://github.com/voxpupuli/puppet-gitlab) and 
-[ajcrowe/puppet-supervisord](https://github.com/ajcrowe/puppet-supervisord). 
+This module uses hiera to configure supervisord and gitlab-ci-multi-runner.
+We're using upstream module [voxpupuli/puppet-gitlab](https://github.com/voxpupuli/puppet-gitlab) and
+[ajcrowe/puppet-supervisord](https://github.com/ajcrowe/puppet-supervisord).
 This module is compatible with Ubuntu 14.04, Ubuntu 16.04, Puppet 3, Puppet 5.
 
 
@@ -57,33 +57,8 @@ GitLab runner is activated to test after each push.
 
 Configuration testing is done with `InSpec`: https://www.inspec.io/
 
-### Local testing
+### Testing
 
-To test changes before committing them, you can execute the gitlab runner locally.
-Unfortunately the official gitlab-runner does not support local testing (according feature request: https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/issues/1359). So we need a custom binary:
+When making changes you can test this module locally with [gitlab-runner on Mac OSX](https://docs.gitlab.com/runner/install/osx.html)
 
-1. install docker
-
-2. download gitlab-runner binary
-
-```bash
-sudo curl --output /usr/local/bin/gitlab-ci-multi-runner-sc https://gitlab.scale.sc/a.kirchner/gitlab-ci-multi-runner-sc/raw/master/bin/gitlab-ci-multi-runner-sc
-sudo chmod +x /usr/local/bin/gitlab-ci-multi-runner-sc
-```
-
-3. execute in your working copy
-
-```bash
-gitlab-ci-multi-runner-sc exec docker --docker-volumes `pwd`:/tmp/local-working-directory <TEST>
-```
-
-The following tests are available:
-
-`14.04:puppet3`
-
-`16.04:puppet3`
-
-`14.04:puppet5`
-
-`16.04:puppet5`
-
+`gitlab-runner exec docker --env "GIT_STRATEGY=none" --docker-volumes \`pwd\`:/builds/project-0 xenial:puppet5`
