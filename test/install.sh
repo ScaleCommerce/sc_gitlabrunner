@@ -26,7 +26,7 @@ git clone https://github.com/ScaleCommerce/puppet-supervisor_provider.git $(pupp
 ln -sf $(pwd) $(puppet config print modulepath |cut -d: -f1)/sc_gitlabrunner
 
 #ln -sf ./test/document_roots /var/www
-curl -s https://omnitruck.chef.io/install.sh | bash -s -- -P inspec
+curl -s https://omnitruck.chef.io/install.sh | bash -s -- -P inspec  -v 3.9.3
 
 #fix for scalecommerce/base:0.6
 if ! dpkg-query -W apt-transport-https ; then
